@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Navbar extends Component {
     render(){
@@ -18,30 +19,19 @@ export default class Navbar extends Component {
                     <div className="offcanvas-body">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <Link className="nav-link" to="/">Home/ General</Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/">About</a>
-                        </li>
+                        <li className="nav-item"><Link className="nav-link" to="/business">Business</Link></li>
+                        <li className="nav-item"><Link className="nav-link " to="/entertainment">Entertainment</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
                         <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+                            Country
                         </a>
-                            <ul className="dropdown-menu">
-                                <li>< a className="dropdown-item" href="#"> Business</a></li>
-                                <li>< a className="dropdown-item" href="#"> Entertainment</a></li>
-                                <li>< a className="dropdown-item" href="#"> General</a></li>
-                                <li>< a className="dropdown-item" href="#"> Health</a></li>
-                                <li>< a className="dropdown-item" href="#"> Science</a></li>
-                                <li>< a className="dropdown-item" href="#"> Sports</a></li>
-                                <li>< a className="dropdown-item" href="#"> Technology</a></li>
-                            </ul>
-                         </li>
-                        <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
-                        </a>
-                            <ul className="dropdown-menu">
+                        <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="#"type="ar">Argentina</a></li>
                             <li><a className="dropdown-item" href="#"type="au">Australia</a></li>
                             <li><a className="dropdown-item" href="#"type="at">Austria</a></li>
