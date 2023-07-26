@@ -5,7 +5,7 @@ export default class Navbar extends Component {
     render(){
         return(
             <div>
-            <nav className="navbar bg-body-tertiary">
+            <nav className="navbar bg-body-tertiary fixed-top">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">News Z Nation</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
