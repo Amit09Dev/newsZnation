@@ -1,0 +1,17 @@
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-bottom: 0.5em;
+}
+
+.card-body .btn-sm{
+    margin-bottom: 0.5em;
+}
+
+.badge{
+    position: absolute;
+    right: 0;
+    z-index: 10;
+}

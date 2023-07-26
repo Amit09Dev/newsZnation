@@ -1,17 +1,21 @@
 import {Component} from 'react'
 import PropTypes from 'prop-types'
+import Error404 from '../assets/404error.gif'
+import './NewsItemStyle.css'
 
 export default class NewsItem extends Component{
 
     render(){
-  let {title, description, imageUrl, newsUrl} = this.props
+  let {title, description, imageUrl, newsUrl, author, date} = this.props
         return(
-            <div>
-               <div className="card mt-3" style={{ height: '370px'}}>
-                <img src={imageUrl} className="card-img-top" alt="..." height={'161px'}/>
-                <div className="card-body" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', flexDirection: 'column'}}>
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
+            <div className='position-relative'>
+               <span className="badge text-bg-primary">{author ? author : 'Unknown'}</span>
+               <div className="card mt-3" style={{ height: '410px'}}>
+                <img src={imageUrl ? imageUrl : Error404} className="card-img-top" alt="..." height={'161px'}/>
+                <div className="card-body" >
+                    <h5 className="card-title">{title ? title.slice(0, 60).concat('...') : '' }</h5>
+                    <p className="card-text">{description ? description.slice(0, 70).concat('...') : ''}</p>
+                    <p className="card-text text-start"><small className="text-body-secondary">Updated on: {new Date(date).toGMTString()}</small></p>
                     <a href={newsUrl} target="_blank" rel="noreferrer" className="btn btn-dark btn-sm">Read More</a>
                 </div>
                 </div>
@@ -24,6 +28,8 @@ NewsItem.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     imageUrl : PropTypes.string,
-    newsUrl : PropTypes.string
+    newsUrl : PropTypes.string,
+    date: PropTypes.string, 
+    author:PropTypes.string,
 }
 
