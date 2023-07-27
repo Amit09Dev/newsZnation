@@ -24,7 +24,7 @@ capitalize (str){
 
     UpdateNews = async() =>{
         this.props.setProgress(10)
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=7407f1ab31a745f98769e247cd83262c&page=${this.state.page}&pageSize=${this.props.pageSize}` 
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}` 
         let data = await fetch(url)
         this.props.setProgress(30)
         let parsedData = await data.json()
@@ -39,7 +39,7 @@ capitalize (str){
 
     fetchMoreData = async () => {
         this.setState({page: this.state.page + 1})
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=7407f1ab31a745f98769e247cd83262c&page=${this.state.page + 1}&pageSize=${this.props.pageSize}` 
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}` 
         let data = await fetch(url)
         let parsedData = await data.json()
         this.setState ({
@@ -89,6 +89,7 @@ News.propTypes = {
     country: PropTypes.string,
     category: PropTypes.string,
     setProgress: PropTypes.func,
+    apikey: PropTypes.string
   };
 
 News.defaultProps = {

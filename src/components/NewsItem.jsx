@@ -15,7 +15,7 @@ export default class NewsItem extends Component{
                 <div className="card-body" >
                     <h5 className="card-title">{title ? title.slice(0, 60).concat('...') : '' }</h5>
                     <p className="card-text">{description ? description.slice(0, 70).concat('...') : ''}</p>
-                    <p className="card-text text-start"><small className="text-body-secondary">Updated on: {new Date(date).toGMTString()}</small></p>
+                    <p className="card-text text-start"><small className="text-body-dark">Updated on: {new Date(date).toGMTString()}</small></p>
                     <a href={newsUrl} target="_blank" rel="noreferrer" className="btn btn-dark btn-sm">Read More</a>
                 </div>
                 </div>
