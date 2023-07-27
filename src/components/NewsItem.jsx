@@ -1,12 +1,10 @@
-import {Component} from 'react'
 import PropTypes from 'prop-types'
 import Error404 from '../assets/404error.gif'
 import './NewsItemStyle.css'
 
-export default class NewsItem extends Component{
+const NewsItem = (props) =>{
 
-    render(){
-  let {title, description, imageUrl, newsUrl, author, date} = this.props
+  let {title, description, imageUrl, newsUrl, author, date} = props
         return(
             <div className='position-relative'>
                <span className="badge text-bg-primary">{author ? author : 'Unknown'}</span>
@@ -21,7 +19,6 @@ export default class NewsItem extends Component{
                 </div>
             </div>
         )
-    }
 }
 
 NewsItem.propTypes = {
@@ -33,3 +30,5 @@ NewsItem.propTypes = {
     author:PropTypes.string,
 }
 
+
+export default NewsItem
