@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import News from './components/News'
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
@@ -11,7 +11,7 @@ const [progress, setProgress] = useState(0)
   
 return(
   <BrowserRouter>
-        <Navbar/> 
+        {/* <Navbar/>  */}
         <LoadingBar color='#f11946' heigh={3} progress={progress} />
         <Routes>
           <Route exact path='/' element={<News setProgress={setProgress} apikey={apikey} key={'genral'} category='general'/>}/>
